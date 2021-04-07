@@ -48,6 +48,16 @@
         <vault.package.version>${project.version}</vault.package.version>
         <vault.package.group>adobe/granite</vault.package.group>
         <vault.package.company>Adobe Systems</vault.package.company>
+        <crx.host>localhost</crx.host>
+        <crx.port>6900</crx.port>
+        <crx.username>admin</crx.username>
+        <crx.password>admin</crx.password>
+        <publish.crx.host>localhost</publish.crx.host>
+        <publish.crx.port>6901</publish.crx.port>
+        <publish.crx.username>admin</publish.crx.username>
+        <publish.crx.password>admin</publish.crx.password>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
     </properties>
 
     <build>
@@ -135,6 +145,9 @@
                 <configuration>
                     <group>${vault.package.group}</group>
                     <requiresRoot>true</requiresRoot>
+                    <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
+                    <username>${crx.username}</username>
+                    <password>${crx.password}</password>
 
                     <properties>
                         <acHandling>overwrite</acHandling>
